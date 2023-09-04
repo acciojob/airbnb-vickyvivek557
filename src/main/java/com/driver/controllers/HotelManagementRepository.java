@@ -17,7 +17,7 @@ public class HotelManagementRepository {
     HashMap<Integer, Booking> bookingsDb = new HashMap<>();
 
     public String addHotel(Hotel hotel) {
-        if(hotel.getHotelName().equals(null) || hotel.equals(null)){
+        if(hotel.getHotelName() == null || hotel == null){
             return "FAILURE";
         }
 
