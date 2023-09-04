@@ -74,7 +74,10 @@ public class HotelManagementRepository {
     }
 
     public int getBookings(Integer aadharCard) {
-        return bookingsDb.get(aadharCard).getBookingAadharCard();
+        if(bookingsDb.containsKey(aadharCard)){
+            return bookingsDb.get(aadharCard).getBookingAadharCard();
+        }
+        return aadharCard;
     }
 
     public Hotel updateFacilities(List<Facility> newFacilities, String hotelName) {
